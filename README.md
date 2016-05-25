@@ -38,6 +38,6 @@ Input: chmod +x gfwtiny.sh && ./gfwtiny.sh
 
 只須選擇2者其中之一使用
 
-Select one script and using which is suitable for your VPS. 
+Select one script only and using which is suitable for your VPS. 
 
 Check out gfw.press github at https://github.com/chinashiyu/gfw.press
