@@ -12,6 +12,7 @@ gfw3proxy.sh 是一個bash腳本，在Debian Base OS安裝gfw.press服務器及�
 Explanation
 
 gfw3proxy.sh is a bash shell script for install gfw.press and 3proxy on Debian Base OS.
+Works on Ubuntu 14.04/15.04 or Debian 7/8.
 
 Usage
 
