@@ -15,7 +15,7 @@
 howmany=${1:-16}
 password_gen(){
         local matrix pw count pick i
-        matrix="123456789aAbBcCdDeEfFgGhHiIjJkKLmMpPqQrRsStTuUvVwWxXyYzZ"
+        matrix="123456789aAbBcCdDeEfFgGhHiIjJkKLmMnNpPqQrRsStTuUvVwWxXyYzZ"
         count="${#matrix}"
         for ((i=1 ; i<=howmany ;i++)) ; do
                 pick=${matrix:$((RANDOM%count-1)):1}
