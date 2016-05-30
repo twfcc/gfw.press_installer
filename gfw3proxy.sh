@@ -88,8 +88,8 @@ EOF
 #
 ### BEGIN INIT INFO
 # Provides: 3Proxy
-# Required-Start: $remote_fs $syslog
-# Required-Stop: $remote_fs $syslog
+# Required-Start: \$remote_fs \$syslog
+# Required-Stop: \$remote_fs \$syslog
 # Default-Start: 2 3 4 5
 # Default-Stop: 0 1 6
 # Short-Description: Initialize 3proxy server
