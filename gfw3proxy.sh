@@ -102,7 +102,7 @@ case "\$1" in
 		/usr/local/etc/3proxy/bin/3proxy /usr/local/etc/3proxy/3proxy.cfg
 		 ;;
 	 stop)  echo "Stopping 3Proxy" ;
-		kill `ps aux | grep 3proxy | grep -v grep | awk '{print \$2}'`
+		kill \`ps aux | grep 3proxy | grep -v grep | awk '{print \$2}'\`
 		;;
 	    *)  echo Usage: \\\$0 "{start|stop}" ;
 		exit 1 ;
