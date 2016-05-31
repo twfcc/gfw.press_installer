@@ -20,6 +20,13 @@ remove_gfw(){
 	if [ -d "$HOME/gfw.press" ] ; then
 		rm -rf "$HOME/gfw.press" 
 	fi
+	if [ -d /usr/local/etc/gfw.press ] ; then
+		rm -rf /usr/local/etc/gfw.press
+	fi
+	if [ -f /etc/init.d/gfw.press ] ; then
+		update-rc.d -f gfw.press remove
+		rm -f /etc/init.d/gfw.press 
+	fi
 
 	pattern="java -Dfile.encoding=utf-8 -Dsun.jnu.encoding=utf-8 -Duser.timezone=Asia/Shanghai"
 	pids=$(ps aux | grep "$pattern" | grep -v grep | awk '{print $2}')
@@ -30,6 +37,9 @@ remove_gfw(){
 }
 
 remove_tiny(){
+	if [ -f /etc/tinyproxy.conf.bak ] ; then
+		mv -f /etc/tinyproxy.conf.bak /etc/tinyproxy.conf 2> /dev/null
+	fi
 	apt-get purge tinyproxy -y 2> /dev/null
 }
 
