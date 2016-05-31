@@ -5,8 +5,10 @@
 # $Usage: $0
 # Public Domain use as your own risk.
 
+LANGUAGE=C
+LC_ALL=C
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-export PATH
+export LANGUAGE LC_ALL PATH
 
 [ $(whoami) != "root" ] && {
 	echo "Execute this script must be root." >&2
@@ -66,14 +68,13 @@ printf '%b' '\033[31mUninstall gfw.press\033[39m'
 
 if which tinyproxy > /dev/null 2>&1
 	then 
-		remove_gfw
-		remove_tiny
+		remove_gfw &> /dev/null
+		remove_tiny &> /dev/null
 	else
-		remove_gfw
-		remove_3proxy
+		remove_gfw &> /dev/null
+		remove_3proxy &> /dev/null
 fi
 
 echo -n " .." ; sleep 1 ; echo -n " .. " ; sleep 1
 printf '%b\n' '\033[32mDone.\033[39m'
 exit 0
-
