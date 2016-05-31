@@ -32,7 +32,7 @@ chmod +x 腳本名.sh && ./腳本名.sh
 
 如須解除安裝，執行
 
-wget --no-check-certificate https://raw.githubusercontent.com/twfcc/gfw.press_installer/master/gfw3proxy_init.sh
+wget --no-check-certificate https://raw.githubusercontent.com/twfcc/gfw.press_installer/master/uninstall.sh
 
 chmod +x uninstall.sh && ./uninstall.sh
 
