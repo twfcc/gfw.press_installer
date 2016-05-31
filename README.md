@@ -70,7 +70,7 @@ chmod +x scriptname && ./scriptname.sh
 
 if you want to uninstall gfw.press and [ tinyproxy | 3proxy ], follow steps as below
 
-wget --no-check-certificate https://raw.githubusercontent.com/twfcc/gfw.press_installer/master/gfw3proxy_init.sh
+wget --no-check-certificate https://raw.githubusercontent.com/twfcc/gfw.press_installer/master/uninstall.sh
 
 chmod +x uninstall.sh && ./uninstall.sh
 
