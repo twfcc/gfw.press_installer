@@ -1,49 +1,76 @@
 # gfw.press_installer
 
-gfw3proxy.sh 說明
+說明
 
-gfw3proxy.sh 是一個bash腳本，在Debian Base OS安裝gfw.press服務器及後端代理3proxy
+gfw3proxy.sh 是一個bash腳本，安裝gfw.press服務器及後端代理3proxy
+
+gfwtiny.sh 是一個bash腳本，安裝gfw.press服務器及後端代理tinyproxy
+
+gfw3proxy_init.sh 腳本會安裝gfw.press和3proxy,並設置成為系統服務
+
+gfwtiny.sh可在Ubuntu 14.04或Debian 7安裝服務器
+
+gfw3proxy.sh和gfw3proxy_init.sh可在Ubuntu 14.04/15.04或Debian 7/8安裝服務器
+
+只須選擇一個合適的腳本在VPS上安裝服務器
 
 使用方法
 
-以root登錄VPS，下載腳本，執行chmod +x gfw3proxy.sh && ./gfw3proxy.sh
+以root登錄VPS，執行
 
-可在Ubuntu 14.04/15.04 或 Debian 7/8 使用
+wget --no-check-certificate https://raw.githubusercontent.com/twfcc/gfw.press_installer/master/gfw3proxy.sh
 
-Explanation of gfw3proxy.sh
+或
 
-gfw3proxy.sh is a bash shell script for install gfw.press and 3proxy on Debian Base OS.
+wget --no-check-certificate https://raw.githubusercontent.com/twfcc/gfw.press_installer/master/gfwtiny.sh
 
-Works on Ubuntu 14.04/15.04 or Debian 7/8.
+或
+
+wget --no-check-certificate https://raw.githubusercontent.com/twfcc/gfw.press_installer/master/gfw3proxy_init.sh
+
+chmod +x 腳本名.sh && ./腳本名.sh
+
+如須解除安裝，執行
+
+wget --no-check-certificate https://raw.githubusercontent.com/twfcc/gfw.press_installer/master/gfw3proxy_init.sh
+
+chmod +x uninstall.sh && ./uninstall.sh
+
+Explanation
+
+gfw3proxy.sh is a bash script for installing gfw.press and 3proxy
+
+gfwtiny.sh is a bash script for installing gfw.press and tinyproxy
+
+gfw3proxy_init.sh is a bash script for installing gfw.press and 3proxy as system service.
+
+gfwtiny.sh works on Ubuntu 14.04 and Debian 7
+
+gfw3proxy.sh and gfw3proxy_init.sh work on Ubuntu 14.04/15.04 and Debian 7/8
+
+Choose one script only which is suitable for your VPS to install server.
 
 Usage
 
-Login your VPS with user 'root' via ssh client and downloading the script. 
+Login to your VPS as user 'root' via ssh client, follow steps as below
 
-Input: chmod +x gfw3proxy.sh && ./gfw3proxy.sh
+wget --no-check-certificate https://raw.githubusercontent.com/twfcc/gfw.press_installer/master/gfw3proxy.sh
 
-gfwtiny.sh 說明
+or
 
-gfwtiny.sh 是一個bash腳本，在Debian Base OS安裝gfw.press服務器及後端代理tinyproxy
+wget --no-check-certificate https://raw.githubusercontent.com/twfcc/gfw.press_installer/master/gfwtiny.sh
 
-以root登錄VPS，下載腳本，執行chmod +x gfwtiny.sh && ./gfwtiny.sh
+or
 
-可在Ubuntu 14.04 或 Debian 7 使用
+wget --no-check-certificate https://raw.githubusercontent.com/twfcc/gfw.press_installer/master/gfw3proxy_init.sh
 
-Explanation of gfwtiny.sh
+then
 
-gfwtiny.sh is a bash shell script for install gfw.press and tinyproxy on Debian Base OS.
+chmod +x scriptname && ./scriptname.sh
 
-Works on Ubuntu 14.04 or Debian 7
+if you want to uninstall gfw.press and [ tinyproxy | 3proxy ], follow steps as below
 
-Usage
+wget --no-check-certificate https://raw.githubusercontent.com/twfcc/gfw.press_installer/master/gfw3proxy_init.sh
 
-Login your VPS with user 'root' via ssh client and downloading the script.
+chmod +x uninstall.sh && ./uninstall.sh
 
-Input: chmod +x gfwtiny.sh && ./gfwtiny.sh
-
-只須選擇2者其中之一使用
-
-Select one script only and using which is suitable for your VPS. 
-
-Check out gfw.press github at https://github.com/chinashiyu/gfw.press
