@@ -198,16 +198,15 @@ gfw_press_install(){
 	cat >gfw.press<<EOF
 #! /bin/sh
 #
-#### BEGIN INIT INFO
+### BEGIN INIT INFO
 # Provides: gfw.press
 # Required-Start: \$remote_fs \$syslog
 # Required-Stop: \$remote_fs \$syslog
 # Default-Start: 2 3 4 5
 # Default-Stop: 0 1 6
 # Short-Description: Initialize gfw.press server
-# Description: {starts|stop|restart} gfw.press
-# USAGE: \$0 {start|stop|restart|status}
-#### END INIT INFO
+# Description: starts gfw.press
+### END INIT INFO
 
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 PATTERN="java -Dfile.encoding=utf-8 -Dsun.jnu.encoding=utf-8 -Duser.timezone=Asia/Shanghai"
