@@ -1,6 +1,6 @@
 #! /bin/bash
 # $author: twfcc@twitter
-# $PROG: gfwproxy-init.sh
+# $PROG: gfw3proxy_init.sh
 # $description: Install gfw.press & 3proxy as system service
 # $Usage: $0
 # Works on Debian 7/8 and Ubuntu 14.04/15.04
