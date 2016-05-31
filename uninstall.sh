@@ -1,7 +1,7 @@
 #! /bin/bash
 # $author: twfcc@twitter
 # $PROG: uninstall.sh
-# $description: uninstall components installed by [gfw3proxy.sh|gfwtiny.sh]
+# $description: uninstall components which installed by [gfw3proxy.sh|gfwtiny.sh]
 # $Usage: $0
 # Public Domain use as your own risk.
 
