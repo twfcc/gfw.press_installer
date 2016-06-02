@@ -218,7 +218,7 @@ do_start(){
 	do_status
 	cd /usr/local/etc/gfw.press
 	if test \$RETURN_STATUS -ne 0 ; then
-		./server.sh
+		test -x server.sh && ./server.sh
 		echo "Strating \$PROGNAME ..."
 	else
 		:
