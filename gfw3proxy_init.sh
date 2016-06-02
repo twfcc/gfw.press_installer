@@ -187,7 +187,7 @@ gfw_press_install(){
 	port=$(genport)
 	echo "$port $pw" > user.txt ;
 	cp -f server.sh server.org ;
-	sed -i 's/ -Xm[a-z][0-9]\{1,4\}M//g;s/ >> server.log/ 2>> \/dev\/null >> \/dev\/null/' server.sh ;
+	sed -i 's/ -Xm[a-z][0-9]\{1,4\}M//g;s/ >> server\.log/ 2>> \/dev\/null >> \/dev\/null/' server.sh ;
 	chmod +x server.sh
 
 	cd /etc/init.d/ || {
