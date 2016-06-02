@@ -220,7 +220,6 @@ do_start(){
 	if test \$RETURN_STATUS -ne 0 ; then
 		./server.sh
 		echo "Strating \$PROGNAME ..."
-		nohup \$_java \$_pack.Server 2>> /dev/null >> /dev/null &
 	else
 		:
 	fi
