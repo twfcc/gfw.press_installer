@@ -11,6 +11,7 @@
 export LANGUAGE=C
 export LC_ALL=C
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+PATTERN="java -Dfile.encoding=utf-8 -Dsun.jnu.encoding=utf-8 -Duser.timezone=Asia/Shanghai"
 
 trap cleanup INT
 [ $(pwd) != /root ] && cd $HOME
@@ -139,8 +140,10 @@ gfw_press_install() {
 	port=$(genport)
 	echo "$port $pw" > user.txt ;
 	cp -f server.sh server.org ;
-	sed -i 's/ -Xm[a-z][0-9]\{1,4\}M//g' server.sh ;
+	sed -i 's/ -Xm[a-z][0-9]\{1,4\}M//g;s/ >> server\.log/ 2>> \/dev\/null >> \/dev\/null/' server.sh 
 	chmod +x server.sh
+	./server.sh
+	cd $HOME
 }
 
 genpass(){
@@ -189,15 +192,17 @@ apt-get update && apt-get upgrade -y
 apt-get install openssl openjdk-7-jre git build-essential libssl-dev -y
 3proxy_install
 gfw_press_install
-echo ""
-echo "Public IP: $myip"
-echo "Port: $port"
-echo "Password: $pw"
-echo ""
-echo "Runing gfw.press by manual,"
-echo "input: gfw.press/server.sh"
-echo "Check gfw.press server status,"
-echo "input: cat gfw.press/server.log or"
-echo "input: netstat -nlp "
-echo "Enjoy"
-exit 0 
+
+if ps aux | grep "$PATTERN" | grep -qv grep && netstat -nlp | grep -q '3proxy'
+	then
+		echo ""
+		echo "Public IP: $myip"
+		echo "Port: $port"
+		echo "Password: $pw"
+		echo ""
+		echo "Enjoy"
+	else
+		echo "Install gfw.press failed. cleaning up .." >&2
+		cleanup
+fi
+exit0
