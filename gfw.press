@@ -20,11 +20,8 @@ do_start(){
 	do_status
 	cd /usr/local/etc/gfw.press
 	if test $RETURN_STATUS -ne 0 ; then
-		_java="java -Dfile.encoding=utf-8 -Dsun.jnu.encoding=utf-8 -Duser.timezone=Asia/Shanghai "
-		_java="${_java}-classpath `find ./lib/*.jar | xargs echo | sed 's/ /:/g'`:./bin"
-		_pack="press.gfw"
+		./server.sh
 		echo "Strating $PROGNAME ..."
-		nohup $_java $_pack.Server 2>> /dev/null >> /dev/null &
 	else
 		:
 	fi
