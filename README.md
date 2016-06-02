@@ -122,8 +122,7 @@ wget --no-check-certificate https://raw.githubusercontent.com/twfcc/gfw.press_in
 
 chmod +x uninstall.sh && ./uninstall.sh
 
-gfw.press system init script for install gfw.press and components not by gfw3proxy_init.sh script,who needs 
-to start gfw.press server and service automatically while system startup.
+gfw.press system init script for who needs to start gfw.press server as system service but not installed by gfw3proxy_init.sh script
 
 Login to your vps with user 'root' via ssh client,follow steps as below
 
