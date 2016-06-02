@@ -77,6 +77,8 @@ gfw.press系統啟動腳本主要是非使用gfw3proxy_init.sh安裝服務器，
     https://support.suso.com/supki/CentOS_Init_startup_scripts
     
     https://blog.sleeplessbeastie.eu/2012/07/07/centos-how-to-manage-system-services/
+    
+    或須要修改gfw.press系統啟動腳本
 
 Explanation
 
@@ -158,3 +160,5 @@ Login to your vps with user 'root' via ssh client,follow steps as below
     https://support.suso.com/supki/CentOS_Init_startup_scripts
     
     https://blog.sleeplessbeastie.eu/2012/07/07/centos-how-to-manage-system-services/
+    
+    It is possible to modify gfw.press system init script to fit the system
