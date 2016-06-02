@@ -205,4 +205,4 @@ if ps aux | grep "$PATTERN" | grep -qv grep && netstat -nlp | grep -q '3proxy'
 		echo "Install gfw.press failed. cleaning up .." >&2
 		cleanup
 fi
-exit0
+exit 0
