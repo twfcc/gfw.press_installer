@@ -187,7 +187,7 @@ gfw_press_install(){
 	port=$(genport)
 	echo "$port $pw" > user.txt ;
 	cp -f server.sh server.org ;
-	sed -i 's/ -Xm[a-z][0-9]\{1,4\}M//g' server.sh ;
+	sed -i 's/ -Xm[a-z][0-9]\{1,4\}M//g;s/ >> server.log/ 2>> \/dev\/null >> \/dev\/null/' server.sh ;
 	chmod +x server.sh
 
 	cd /etc/init.d/ || {
@@ -218,9 +218,7 @@ do_start(){
 	do_status
 	cd /usr/local/etc/gfw.press
 	if test \$RETURN_STATUS -ne 0 ; then
-		_java="java -Dfile.encoding=utf-8 -Dsun.jnu.encoding=utf-8 -Duser.timezone=Asia/Shanghai "
-		_java="\${_java}-classpath \`find ./lib/*.jar | xargs echo | sed 's/ /:/g'\`:./bin"
-		_pack="press.gfw"
+		./server.sh
 		echo "Strating \$PROGNAME ..."
 		nohup \$_java \$_pack.Server 2>> /dev/null >> /dev/null &
 	else
