@@ -3,10 +3,7 @@
 # $PROG: gfw3proxy.sh
 # $description: install gfw.press & 3proxy 
 # Public domain use as your own risk!
-# Test on debian 8 jessie x86_64 Vmware VPS
-# You must execute gfw.press by manual 
-# input: gfw.press/server.sh after script finished. 
-# $date: May 09, 2016
+# Works on Debian 7/8 and Ubuntu 14.04/15.04
 
 export LANGUAGE=C
 export LC_ALL=C
